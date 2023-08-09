@@ -2,16 +2,19 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String phoneNumber = "9604157537";
+        if (phoneNumber.length()==10) {                                         //у строки тоже есть функия ленг,но со скобками
+                                                       //CTRL+ALT+T - и строчка от которой мы хотим сделать оператор иф
+            phoneNumber = '7' + phoneNumber;          //этим кодом мы сказали, что если количесво цифр 10, тогда нужно прибавить на конце цифру "7"
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        } else if (phoneNumber.length() > 11) {       //тут мы доворим, что если номер длинее стандартного, тогда должна вылести ошибка
+            throw new RuntimeException("Телеофон слишком длинный");    // команда для Ошибки с красными буквами в ИДЕИ "throw new RuntimeException()"
+        } else if (phoneNumber.length() < 10) {
+            throw new RuntimeException("Телефон слишком короткий");
         }
+
+
+        System.out.println("phoneNumber = " + phoneNumber);
+
     }
 }
